@@ -25,7 +25,7 @@ export const ProductService = {
     // } });
     const response = await get({
       endpoint: `/products/search`,
-      params: { q },
+      params: { q, limit: 100 },
     });
     response.data.products = (response.data as GetProductsApiResponse).products.filter((item) => item.category === category);
     response.data.total = 0;
