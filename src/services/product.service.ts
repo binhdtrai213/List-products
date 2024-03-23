@@ -8,11 +8,7 @@ import { get } from "../utils/ApiCaller";
 export const ProductService = {
   async getAllProducts(data: BaseQuery) {
     // const { current, pageSize, q = "" } = data;
-    return [
-      { id: 1, name: "Product 1" },
-      { id: 2, name: "Product 2" },
-      { id: 3, name: "Product 3" },
-    ];
+    return await get({ endpoint: "/products" });
   },
 
   async getProductsByCat(

@@ -47,7 +47,7 @@ export default function Homepage() {
     isError: isProductsError,
   } = useQuery<GetProductsApiResponse, AxiosError>({
     queryKey: [
-      QueryKey.GET_CATEGORIES,
+      QueryKey.GET_PRODUCTS_BY_CAT,
       selectCategory,
       textSearch,
       currentPage,
@@ -130,7 +130,12 @@ export default function Homepage() {
                           .fill("")
                           .map((item, index) => <CardSkeleton key={index} />)
                       : products?.products?.map((product) => (
-                          <CardProduct key={product.id} product={product} />
+                          <CardProduct key={product.id} product={product} queryKey={[
+                            QueryKey.GET_PRODUCTS_BY_CAT,
+                            selectCategory,
+                            textSearch,
+                            currentPage,
+                          ]} />
                         ))}
                   </InfiniteScroll>
                 )}
