@@ -15,10 +15,10 @@
   .headline-4 {
     @apply font-semibold text-base leading-5;
   }
-  .body1 {
+  .body-1 {
     @apply font-normal text-base leading-5;
   }
-  .body2 {
+  .body-2 {
     @apply font-normal text-sm leading-[18px]; 
   }
 }

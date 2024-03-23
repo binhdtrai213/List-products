@@ -1,11 +1,10 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import Homepage from "./pages/homepage/homepage";
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="headline-1">Hello world!</h1>
+    <div className="bg-primary-10 min-w-screen min-h-screen py-15">
+      <Homepage />
     </div>
   );
 }

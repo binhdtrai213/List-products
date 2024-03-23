@@ -21,12 +21,20 @@ module.exports = {
       13: "48px",
       14: "56px",
       15: "64px",
+      16: "72px",
+      17: "80px",
+      18: "96px",
+      19: "112px",
+      20: "128px",
+      21: "144px",
+      22: "160px",
+      23: "176px",
+      24: "192px",
     },
     extend: {
       colors: {
         transparent: "transparent",
         primary: {
-          default: "#6713EF",
           10: "#f0e7fd",
           20: "#e1d0fc",
           30: "#d1b8fa",
@@ -39,7 +47,6 @@ module.exports = {
           100: "#6713EF",
         },
         neutral: {
-          default: "#202020",
           0: "#202020",
           1: "#353C49",
           2: "#505866",

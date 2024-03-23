@@ -13,8 +13,8 @@ type ApiCallerType = {
 };
 
 // This is config default for axios caller
-const ApiCaller = ({ method, endpoint, headers, params = {}, body = {} }: ApiCallerType) => {
-  return axios({
+const ApiCaller = async ({ method, endpoint, headers, params = {}, body = {} }: ApiCallerType) => {
+  return await axios({
     method,
     url: defaultURL + endpoint,
     headers,
@@ -33,22 +33,22 @@ const ApiCaller = ({ method, endpoint, headers, params = {}, body = {} }: ApiCal
 //   },
 // );
 
-export const get = ({ endpoint, params, headers }: Omit<ApiCallerType, "method" | "body">) => {
-  return ApiCaller({ method: "GET", endpoint, headers, params });
+export const get = async ({ endpoint, params, headers }: Omit<ApiCallerType, "method" | "body">) => {
+  return await ApiCaller({ method: "GET", endpoint, headers, params });
 };
 
-export const post = ({ endpoint, body, params, headers }: Omit<ApiCallerType, "method">) => {
-  return ApiCaller({ method: "POST", endpoint, headers, params, body });
+export const post = async ({ endpoint, body, params, headers }: Omit<ApiCallerType, "method">) => {
+  return await ApiCaller({ method: "POST", endpoint, headers, params, body });
 };
 
-export const put = ({ endpoint, body, params, headers }: Omit<ApiCallerType, "method">) => {
-  return ApiCaller({ method: "PUT", endpoint, headers, params, body });
+export const put = async ({ endpoint, body, params, headers }: Omit<ApiCallerType, "method">) => {
+  return await ApiCaller({ method: "PUT", endpoint, headers, params, body });
 };
 
-export const patch = ({ endpoint, body, params, headers }: Omit<ApiCallerType, "method">) => {
-  return ApiCaller({ method: "PATCH", endpoint, headers, params, body });
+export const patch = async ({ endpoint, body, params, headers }: Omit<ApiCallerType, "method">) => {
+  return await ApiCaller({ method: "PATCH", endpoint, headers, params, body });
 };
 
-export const remove = ({ endpoint, body, params, headers }: Omit<ApiCallerType, "method">) => {
-  return ApiCaller({ method: "DELETE", endpoint, headers, params, body });
+export const remove = async ({ endpoint, body, params, headers }: Omit<ApiCallerType, "method">) => {
+  return await ApiCaller({ method: "DELETE", endpoint, headers, params, body });
 };
