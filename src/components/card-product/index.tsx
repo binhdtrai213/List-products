@@ -60,7 +60,7 @@ export default function CardProduct({
         alt={product.title}
         className="w-16 h-16 rounded-lg"
       />
-      <div>
+      <div className="w-full">
         <input
           type="text"
           className="headline-4 px-3 py-[6px] text-text-0 w-full rounded-lg hover:bg-neutral-7 active:bg-neutral-6 focus:outline-0 focus:bg-neutral-8
