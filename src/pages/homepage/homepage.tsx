@@ -75,8 +75,6 @@ export default function Homepage() {
     setTextSearch("");
   };
 
-  console.log(products);
-
   return (
     <div
       className="w-1/3 p-9 mx-auto rounded-3xl bg-neutral-8"
@@ -98,7 +96,7 @@ export default function Homepage() {
         {isCategoriesLoading && !products?.products?.length
           ? Array(10)
               .fill("")
-              .map(() => <CategorySkeleton />)
+              .map((item, index) => <CategorySkeleton key={index} />)
           : categories?.map((category) => (
               <div key={category}>
                 <button
@@ -130,7 +128,7 @@ export default function Homepage() {
                     currentPage === 1
                       ? Array(PAGE_SIZE)
                           .fill("")
-                          .map(() => <CardSkeleton />)
+                          .map((item, index) => <CardSkeleton key={index} />)
                       : products?.products?.map((product) => (
                           <CardProduct key={product.id} product={product} />
                         ))}

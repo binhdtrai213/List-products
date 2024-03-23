@@ -20,7 +20,6 @@ export const ProductService = {
     query: BaseQuery
   ): Promise<GetProductsApiResponse> {
     const { current, pageSize, q = "" } = query;
-    console.log(query);
     if (!category) return { products: [], total: 0, limit: 0, skip: 0 };
     // Comment: I'am so confused that I don't know why API get products by category doesn't has limit and skip, search. How can I apply infinite scroll(paging)?
     // const response = await get({ endpoint: `/products/category/${category}`, params: {
